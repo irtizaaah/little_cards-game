@@ -1,0 +1,15 @@
+.DeckContainer{
+    display: flex;
+    width: 100vw;
+    max-width: 500px;
+
+    overflow: scroll;
+}
+
+.DeckContainer { /*hide scrollbar for firefox*/
+    scrollbar-width: none;
+}
+  
+.DeckContainer::-webkit-scrollbar { /*hide scrollbar for safari*/
+display: none;
+}

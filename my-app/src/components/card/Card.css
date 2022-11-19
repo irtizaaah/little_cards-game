@@ -1,0 +1,28 @@
+.Card{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 300px;
+    height: 500px;
+
+    margin: 1rem;
+
+    background-color: var(--deck-background-color);
+
+    border-radius: 25px;
+    color: var(--deck-text-color)
+}
+
+.Card h1{
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin: 2rem;
+}
+
+.Card p{
+    font-weight: 300;
+    font-size: 1.1rem;
+    margin: 5rem;
+}

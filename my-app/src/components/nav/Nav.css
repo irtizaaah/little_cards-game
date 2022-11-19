@@ -1,0 +1,20 @@
+.Nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Nav *{
+    margin: 1.5rem;
+}
+
+.Nav img{
+    width: 0.9rem;
+}
+
+.Nav h1{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+
