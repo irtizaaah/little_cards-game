@@ -1,17 +1,16 @@
 {
   "files": {
-    "main.css": "/little-cards/static/css/main.6a742003.css",
-    "main.js": "/little-cards/static/js/main.ce948f39.js",
+    "main.css": "/little-cards/static/css/main.8cecf520.css",
+    "main.js": "/little-cards/static/js/main.2e8fa552.js",
     "static/media/plant.png": "/little-cards/static/media/plant.6b04d4a73f3cc1f041a8.png",
     "static/media/man.png": "/little-cards/static/media/man.2cf685b37d3e2c2c7b30.png",
     "static/media/chilli.png": "/little-cards/static/media/chilli.ffa75237df69ce9c7a42.png",
-    "static/media/logo.png": "/little-cards/static/media/logo.6edb9ea0104f7117a964.png",
     "index.html": "/little-cards/index.html",
-    "main.6a742003.css.map": "/little-cards/static/css/main.6a742003.css.map",
-    "main.ce948f39.js.map": "/little-cards/static/js/main.ce948f39.js.map"
+    "main.8cecf520.css.map": "/little-cards/static/css/main.8cecf520.css.map",
+    "main.2e8fa552.js.map": "/little-cards/static/js/main.2e8fa552.js.map"
   },
   "entrypoints": [
-    "static/css/main.6a742003.css",
-    "static/js/main.ce948f39.js"
+    "static/css/main.8cecf520.css",
+    "static/js/main.2e8fa552.js"
   ]
 }
