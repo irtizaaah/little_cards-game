@@ -17,7 +17,7 @@ function Nav(props) {
     <div className="Nav">
         {!props.isShared ? <img src={menuIcon} alt="menu icon" onClick={handleClick}/>  : null}
         <Link to="/"><h1>Little Cards</h1></Link>
-        {showMenu ? <Menu className="menu" showMenu={showMenu} setShowMenu={setShowMenu}/> : null}
+        {showMenu ? <Menu className="menu" showMenu={showMenu} setShowMenu={setShowMenu} currentDeckIndex={props.currentDeckIndex} /> : null}
     </div>
   );
 }

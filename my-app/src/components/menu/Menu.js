@@ -2,7 +2,7 @@ import "./Menu.css";
 import QRCode from "react-qr-code";
 
 function Menu(props) {
-  let currentDeckIndex;
+  let currentDeckIndex = props.currentDeckIndex;
   let url = "irtizaaah.github.io/little-cards/card-page/" + currentDeckIndex;
   
   return (

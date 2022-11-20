@@ -17,6 +17,7 @@ function App() {
         <Nav 
           isShared = {isShared}
           setIsShared={setIsShared}
+          currentDeckIndex={currentDeckIndex}
         />
         {isDeckPageOpen ? <h1 className="header">Pick a Deck.</h1> : ""}
       </div>
