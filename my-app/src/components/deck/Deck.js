@@ -10,12 +10,17 @@ function Deck(props) {
     setIsHelpButtonClicked(!isHelpButtonClicked);
   }
 
+  const handleClickDeck = () => {
+    props.setCurrentCardIndex(0);
+    props.setCurrentDeckIndex(props.index);
+  }
+
   return (
     <div className="Deck">
         <div className = "help_button" onClick={handleClickHelp}>
             <h3>{isHelpButtonClicked ? "X" : "?"}</h3>
         </div>
-        <div className={isHelpButtonClicked ? "hide" : "show"} onClick={()=>props.setCurrentDeckIndex(props.index)}>
+        <div className={isHelpButtonClicked ? "hide" : "show"} onClick={handleClickDeck}>
           <Link to="/card-page">
             <div className ="image_container">
                 <img src={require("../../data/" + props.imageURL)} alt="Deck"/>

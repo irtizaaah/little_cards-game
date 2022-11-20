@@ -10,7 +10,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<DeckPage setCurrentDeckIndex={setCurrentDeckIndex}/>}/>
+      <Route path="/" element={<DeckPage setCurrentDeckIndex={setCurrentDeckIndex} setCurrentCardIndex={setCurrentCardIndex}/>}/>
       <Route path="/card-page" element={<CardPage currentDeckIndex={currentDeckIndex} currentCardIndex={currentCardIndex} setCurrentCardIndex={setCurrentCardIndex}/>}/>
     </Routes>
   );

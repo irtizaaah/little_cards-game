@@ -21,13 +21,14 @@ function CardPage(props) {
   }
 
   const incrementIndex = () =>{
-    if(props.currentCardIndex < data.decks[0].cards.length-1) 
+    if(props.currentCardIndex < data.decks[props.currentDeckIndex].cards.length-1) 
       props.setCurrentCardIndex(props.currentCardIndex+1);
   }
 
   useEffect(()=>{
     let midpoint = window.innerWidth/4;
     let buffer = 10;
+    console.log(props.currentCardIndex)
 
     if(mousePosition.x < midpoint - buffer) decrementIndex()
     else if(mousePosition.x > midpoint + buffer) incrementIndex()

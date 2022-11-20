@@ -14,6 +14,7 @@ function DeckContainer(props) {
         index={index} 
         key={deck.id}
         setCurrentDeckIndex={props.setCurrentDeckIndex}
+        setCurrentCardIndex={props.setCurrentCardIndex}
       />
   );
 

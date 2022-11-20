@@ -9,7 +9,7 @@ function DeckPage(props) {
             <Nav/>
             <h1 className="header">Pick a Deck.</h1>
           </div>
-          <DeckContainer setCurrentDeckIndex={props.setCurrentDeckIndex}/>
+          <DeckContainer setCurrentDeckIndex={props.setCurrentDeckIndex} setCurrentCardIndex={props.setCurrentCardIndex}/>
         </div>
       );
 }
