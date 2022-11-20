@@ -7,7 +7,7 @@
     width: 300px;
     height: 500px;
 
-    margin: 1rem;
+    margin: 0.5rem;
 
     background-color: var(--deck-background-color);
 
@@ -18,7 +18,7 @@
 .Card h1{
     font-weight: 400;
     font-size: 1.1rem;
-    margin: 2rem;
+    margin: 1rem;
 }
 
 .Card p{

@@ -1,10 +1,16 @@
 import "./Card.css";
+import data from "../../data/decks.json";
 
-function Card() {
+function Card(props) {
+  const decks = data.decks;
+
+  const name = decks ? decks[props.currentDeckIndex].content.name : "No Deck Selected";
+  const content = decks ? decks[props.currentDeckIndex].cards[props.currentCardIndex].content.text : "Empty Card"; 
+
   return (
     <div className="Card">
-        <h1>36 Questions</h1>
-        <p>Given the Choice of anyone from the world, whom would you want as a dinner guest?</p>
+        <h1>{name}</h1>
+        <p>{content}</p>
     </div>
   );
 }
