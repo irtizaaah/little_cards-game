@@ -3,7 +3,7 @@ import QRCode from "react-qr-code";
 
 function Menu(props) {
   let currentDeckIndex = props.currentDeckIndex;
-  let url = "irtizaaah.github.io/little-cards/card-page/" + currentDeckIndex;
+  let url = "https://irtizaaah.github.io/little-cards/#/card-page/" + currentDeckIndex;
   
   return (
     <div className="Menu" onClick={()=>props.setShowMenu(!props.showMenu)}>
