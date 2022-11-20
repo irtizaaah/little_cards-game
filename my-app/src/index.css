@@ -3,6 +3,9 @@
   --text-color: #ffffff;
   --deck-background-color: #ffffff;
   --deck-text-color: #000000;
+  --card-background-color:#ffffff;
+  --menu-background-color:#ffffff;
+  --menu-text-color:#000000;
 }
 
 body {

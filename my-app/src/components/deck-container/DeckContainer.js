@@ -7,6 +7,7 @@ function DeckContainer(props) {
 
   let deckComponents = data.decks.map((deck, index)=>
       <Deck 
+        className = "deck"
         name={deck.content.name} 
         author={deck.content.author} 
         imageURL={deck.content.imageURL} 

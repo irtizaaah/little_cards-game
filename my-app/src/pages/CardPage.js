@@ -1,10 +1,18 @@
 import './CardPage.css';
-import Nav from '../components/nav/Nav';
 import Card from '../components/card/Card';
+
 import {useState, useEffect} from "react";
+import { useParams } from 'react-router-dom';
+
 import data from "../data/decks.json";
 
 function CardPage(props) {
+  const [name, setName] = useState();
+  const [text, setText] = useState();
+  const {deckIndex} = useParams();
+
+  props.setIsDeckPageOpen(false);
+
   const[mousePosition, setMousePosition] = useState({x:0, y:0});
   if(props.currentCardIndex < -1) props.setCurrentCardIndex(0);
 
@@ -20,7 +28,7 @@ function CardPage(props) {
       props.setCurrentCardIndex(props.currentCardIndex-1);
     }
     else{
-      props.setCurrentCardIndex(data.decks[props.currentDeckIndex].cards.length-1); // loops back around
+      //props.setCurrentCardIndex(data.decks[props.currentDeckIndex].cards.length-1); // loops back around
     }
   }
 
@@ -29,26 +37,44 @@ function CardPage(props) {
       props.setCurrentCardIndex(props.currentCardIndex+1);
     }
     else{
-      props.setCurrentCardIndex(0); // loops back around
+      //props.setCurrentCardIndex(0); // loops back around
     }
   }
 
   useEffect(()=>{
     let midpoint = window.innerWidth/4;
     let buffer = 10;
-    console.log(props.currentCardIndex)
 
-    if(mousePosition.x < midpoint - buffer) decrementIndex()
-    else if(mousePosition.x > midpoint + buffer) incrementIndex()
+    if(mousePosition.x < midpoint - buffer) decrementIndex();
+    else if(mousePosition.x > midpoint + buffer) incrementIndex();
+
+    setName(data.decks[props.currentDeckIndex].content.name);
+    setText(data.decks[props.currentDeckIndex].cards[props.currentCardIndex].content.text); 
 
   },[mousePosition])
 
+  useEffect(()=>{
+    if(data.decks[props.currentDeckIndex].cards.length > 1){
+      if(deckIndex){
+        props.setCurrentDeckIndex(deckIndex);
+        props.setCurrentCardIndex(0);
+    
+        data.decks[props.currentDeckIndex].cards = data.decks[props.currentDeckIndex].cards.filter((_,index)=>(index)%2===0);
+      }
+      else if(props.isShared){
+        data.decks[props.currentDeckIndex].cards = data.decks[props.currentDeckIndex].cards.filter((_,index)=>(index)%2!==0);
+      }
+      else if(!props.isShared){
+      }
+    }
+  },[props.isShared, deckIndex])
+
   return (
     <div className="CardPage" onClick = {handleClick}>
-      <div className="top_container">
-        <Nav/>
-      </div>
-      <Card currentCardIndex={props.currentCardIndex} currentDeckIndex = {props.currentDeckIndex} setCurrentDeckIndex={props.setCurrentDeckIndex}/>
+      <Card
+        name={name}
+        text={text}
+      />
       <p>{props.currentCardIndex+1}/{data.decks[props.currentDeckIndex].cards.length}</p>
     </div>
   );

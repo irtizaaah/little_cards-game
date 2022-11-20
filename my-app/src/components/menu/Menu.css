@@ -1,0 +1,32 @@
+.Menu{
+    position: absolute;
+    top: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 200px;
+    height: 250px;
+
+    border-radius: 25px;
+    
+    background-color: var(--menu-background-color);
+    
+    box-shadow: 5px 5px 100px black;
+}
+
+.qr{
+    width: 1rem;
+}
+
+.options{
+    display: flex;
+    margin: 0;
+    color: var(--menu-text-color);
+}
+
+.options h1{
+    font-size: 0.8rem;
+}
