@@ -4,9 +4,11 @@ import Card from '../components/card/Card';
 import {useState, useEffect} from "react";
 import { useParams } from 'react-router-dom';
 
-import data from "../data/decks.json";
+import dataCopy from "../data/decks.json";
+const dataOriginal = structuredClone(dataCopy);
 
 function CardPage(props) {
+  const [data, setData] = useState(dataCopy);
   const [name, setName] = useState();
   const [text, setText] = useState();
   const {deckIndex} = useParams();
@@ -50,7 +52,6 @@ function CardPage(props) {
 
     setName(data.decks[props.currentDeckIndex].content.name);
     setText(data.decks[props.currentDeckIndex].cards[props.currentCardIndex].content.text); 
-
   },[mousePosition])
 
   useEffect(()=>{
@@ -58,13 +59,18 @@ function CardPage(props) {
       if(deckIndex){
         props.setCurrentDeckIndex(deckIndex);
         props.setCurrentCardIndex(0);
-    
-        data.decks[props.currentDeckIndex].cards = data.decks[props.currentDeckIndex].cards.filter((_,index)=>(index)%2===0);
+
+        let d = structuredClone(data);
+        d.decks[props.currentDeckIndex].cards = d.decks[props.currentDeckIndex].cards.filter((_,index)=>(index)%2===0);
+        setData(d);
       }
       else if(props.isShared){
-        data.decks[props.currentDeckIndex].cards = data.decks[props.currentDeckIndex].cards.filter((_,index)=>(index)%2!==0);
+        let d = structuredClone(data);
+        d.decks[props.currentDeckIndex].cards = d.decks[props.currentDeckIndex].cards.filter((_,index)=>(index)%2!==0);
+        setData(d);
       }
       else if(!props.isShared){
+        setData(structuredClone(dataOriginal));
       }
     }
   },[props.isShared, deckIndex])
