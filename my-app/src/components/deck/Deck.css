@@ -43,12 +43,12 @@
 }
 
 .Deck img{
-    width: 10rem;
+    width: 80%;
 }
 
 .Deck h1{
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 100%;
     
     padding: 0 1.5rem;
     margin: 1rem 0 0 0;
@@ -56,7 +56,7 @@
 
 .Deck h2{
     font-weight: 400;
-    font-size: 0.9rem;
+    font-size: 75%;
     padding: 0 1.5rem;
     margin: 0 0 1.5rem 0;
 }
@@ -68,9 +68,17 @@
 }
 
 .show{
-    visibility: visible;
+    width: 200px;
+    height: 300px;
+    display: block;
 }
 
 .hide{
-    visibility: hidden;
+    display: none;
+}
+.summary{
+    font-weight: 300;
+    font-size: 0.8rem;
+    padding: 1rem;
+    color: var(--deck-text-color);
 }

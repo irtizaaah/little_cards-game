@@ -262,6 +262,42 @@
                     }
                 }
             ]  
+        },
+        {
+            "id": "1",
+            "content": {
+                "name": "Would You Rather? (coming soon)",
+                "author": "",
+                "imageURL": "images/chilli.png",
+                "summary": "A set of questions developed in the 1990s by psychologists Arthur Aron, Ph. D., Elaine Aron, Ph. D., and other researchers to see if two strangers can develop an intimate connection just from asking each other a series of increasingly personal questions."
+            },
+            "cards":[
+                
+                {
+                    "id": "0",
+                    "content":{
+                        "text":"COMING SOON!"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "content": {
+                "name": "One Lie, Two Truths (coming soon)",
+                "author": "",
+                "imageURL": "images/man.png",
+                "summary": ""
+            },
+            "cards":[
+                
+                {
+                    "id": "0",
+                    "content":{
+                        "text":"COMING SOON!"
+                    }
+                }
+            ]
         }
     ]
 }
