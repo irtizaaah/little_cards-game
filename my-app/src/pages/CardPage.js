@@ -16,13 +16,21 @@ function CardPage(props) {
   }
 
   const decrementIndex = () =>{
-    if(props.currentCardIndex > 0) 
+    if(props.currentCardIndex > 0) {
       props.setCurrentCardIndex(props.currentCardIndex-1);
+    }
+    else{
+      props.setCurrentCardIndex(data.decks[props.currentDeckIndex].cards.length-1); // loops back around
+    }
   }
 
   const incrementIndex = () =>{
-    if(props.currentCardIndex < data.decks[props.currentDeckIndex].cards.length-1) 
+    if(props.currentCardIndex < data.decks[props.currentDeckIndex].cards.length-1) {
       props.setCurrentCardIndex(props.currentCardIndex+1);
+    }
+    else{
+      props.setCurrentCardIndex(0); // loops back around
+    }
   }
 
   useEffect(()=>{

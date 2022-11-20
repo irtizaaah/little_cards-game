@@ -12,8 +12,19 @@
     background-color: var(--deck-background-color);
 
     border-radius: 25px;
-    color: var(--deck-text-color)
+    color: var(--deck-text-color);
+
+    overflow: scroll;
 }
+
+.Card { /*hide scrollbar for firefox*/
+    scrollbar-width: none;
+}
+  
+.Card::-webkit-scrollbar { /*hide scrollbar for safari*/
+display: none;
+}
+
 
 .Card h1{
     text-align: center;
@@ -26,5 +37,5 @@
 .Card p{
     font-weight: 300;
     font-size: 110%;
-    margin: 5rem;
+    margin: 3rem;
 }
