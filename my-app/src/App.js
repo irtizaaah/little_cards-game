@@ -18,6 +18,7 @@ function App() {
           isShared = {isShared}
           setIsShared={setIsShared}
           currentDeckIndex={currentDeckIndex}
+          isDeckPageOpen={isDeckPageOpen}
         />
         {isDeckPageOpen ? <h1 className="header">Pick a Deck.</h1> : ""}
       </div>

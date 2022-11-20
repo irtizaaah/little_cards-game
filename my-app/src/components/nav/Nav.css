@@ -8,8 +8,12 @@
     margin: 1rem;
 }
 
-.Nav img{
+.menu_img{
     width: 0.9rem;
+}
+
+.logo_img{
+    width: 2rem;
 }
 
 .Nav h1{
