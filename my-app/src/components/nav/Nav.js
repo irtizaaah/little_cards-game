@@ -9,8 +9,8 @@ function Nav(props) {
   const [showMenu, setShowMenu] = useState(false);
 
   const handleClick = () => {
-    props.setIsShared(true);
-    setShowMenu(!showMenu);
+    props.setIsShared(true); // this is required for CardPage.js to know if it should split deck or not
+    setShowMenu(!showMenu); 
   }
   
   return (

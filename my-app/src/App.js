@@ -2,14 +2,14 @@ import './App.css';
 import CardPage from './pages/CardPage';
 import DeckPage from './pages/DeckPage';
 import {Route, Routes} from "react-router-dom";
-import {useState, useEffect} from "react";
+import {useState} from "react";
 import Nav from './components/nav/Nav';
 
 function App() {
-  const [currentDeckIndex, setCurrentDeckIndex] = useState(0);
-  const [currentCardIndex, setCurrentCardIndex] = useState(0);
-  const [isDeckPageOpen, setIsDeckPageOpen] = useState(true);
-  const [isShared, setIsShared] = useState(false);
+  const [currentDeckIndex, setCurrentDeckIndex] = useState(0); // keep track of current card in list of cards inside deck 
+  const [currentCardIndex, setCurrentCardIndex] = useState(0); // keep track of current deck in list of decks in data
+  const [isDeckPageOpen, setIsDeckPageOpen] = useState(true); // hides and unhides title in top-container based on which component user opens
+  const [isShared, setIsShared] = useState(false); // is the deck split and shared with another user?
   
   return (
     <div>

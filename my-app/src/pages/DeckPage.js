@@ -2,8 +2,8 @@ import './DeckPage.css';
 import DeckContainer from '../components/deck-container/DeckContainer';
 
 function DeckPage(props) {
-  props.setIsDeckPageOpen(true);
-  props.setIsShared(false);
+  props.setIsDeckPageOpen(true); // show title in top-container in App.js
+  props.setIsShared(false); // don't split the deck
   
     return (
         <div className="DeckPage">
