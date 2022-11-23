@@ -9,8 +9,6 @@ const dataOriginal = structuredClone(dataCopy);
 
 function CardPage(props) {
   const [data, setData] = useState(dataCopy); // store the original deck of cards
-  const [name, setName] = useState(); // name of current deck
-  const [text, setText] = useState(); // text in current card
   const {deckIndex} = useParams(); // return param from url
 
   props.setIsDeckPageOpen(false); // unhide title in top-container in App.js
@@ -50,8 +48,6 @@ function CardPage(props) {
     if(mousePosition.x < midpoint - buffer) decrementIndex(); // left side click
     else if(mousePosition.x > midpoint + buffer) incrementIndex(); // right side click
 
-    setName(data.decks[props.currentDeckIndex].content.name);
-    setText(data.decks[props.currentDeckIndex].cards[props.currentCardIndex].content.text); 
   },[mousePosition])
 
   useEffect(()=>{ // if deck is shared, split deck or else unsplit it
@@ -61,12 +57,12 @@ function CardPage(props) {
         props.setCurrentCardIndex(0); // reset curent card index to avoid potential out of bounds error
 
         let d = structuredClone(data); // copy all decks 
-        d.decks[props.currentDeckIndex].cards = d.decks[props.currentDeckIndex].cards.filter((_,index)=>(index)%2===0);
+        d.decks[props.currentDeckIndex].cards = d.decks[props.currentDeckIndex].cards.filter((_,index)=>(index)%2!==0);
         setData(d);
       }
       else if(props.isShared){ // isShared is when sending user shares deck, this splits the deck of sending user (gets odd cards)
         let d = structuredClone(data);
-        d.decks[props.currentDeckIndex].cards = d.decks[props.currentDeckIndex].cards.filter((_,index)=>(index)%2!==0);
+        d.decks[props.currentDeckIndex].cards = d.decks[props.currentDeckIndex].cards.filter((_,index)=>(index)%2===0);
         setData(d);
       }
       else if(!props.isShared){ // no deck was shared
@@ -78,8 +74,8 @@ function CardPage(props) {
   return (
     <div className="CardPage" onClick = {handleClick}>
       <Card
-        name={name}
-        text={text}
+        name={data.decks[props.currentDeckIndex].content.name}
+        text={data.decks[props.currentDeckIndex].cards[props.currentCardIndex].content.text}
       />
       <p>{props.currentCardIndex+1}/{data.decks[props.currentDeckIndex].cards.length}</p>
     </div>
