@@ -3,4 +3,4 @@
 # Little Cards
 [Try Me](https://irtizaaah.github.io/little-cards/)
 
-A web app card game where every card contains a question. The app locally splits and syncs a deck of cards between two people's devices without the use of a server.
+A web app card game where every card contains a question. The app locally splits and syncs a deck of cards between two devices without the use of a server.
