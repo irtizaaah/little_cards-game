@@ -76,6 +76,7 @@ function CardPage(props) {
       <Card
         name={data.decks[props.currentDeckIndex].content.name}
         text={data.decks[props.currentDeckIndex].cards[props.currentCardIndex].content.text}
+        //image={data.decks[props.currentDeckIndex].cards[props.currentCardIndex].content.imageURL}
       />
       <p>{props.currentCardIndex+1}/{data.decks[props.currentDeckIndex].cards.length}</p>
     </div>
